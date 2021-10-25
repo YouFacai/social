@@ -1,7 +1,9 @@
 <template>
 	<view class="search-box">
 		<input class="input" type="text" placeholder="find something fun... ">
-		<view class="btn-search">搜索</view>
+		<view class="btn-search">
+			<image src="../../static/images/search-2-line-white.png" mode="widthFix"></image>
+		</view>
 	</view>
 </template>
 
@@ -36,10 +38,15 @@
 			background-color: #333333;
 			width: 80rpx;
 			height: 80rpx;
-			line-height: 80rpx;
 			text-align: center;
 			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			color: #fff;
+			image{
+				width: 40rpx;
+			}
 		}
 	}
 </style>

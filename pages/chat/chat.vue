@@ -3,8 +3,13 @@
 		<view class="header">
 			<view class="title">消息</view>
 			<view class="operate">
-				<image src="../../static/logo.png" mode="widthFix"></image>
-				<image src="../../static/logo.png" mode="widthFix"></image>
+				<view class="icon-wrapper">
+					<image src="http://www.yzlhaha.top/static/socialicon/chat-heart-line.png" mode="widthFix"></image>
+				</view>
+				<view class="icon-wrapper">
+					<image src="http://www.yzlhaha.top/static/socialicon/account-pin-box-line.png" mode="widthFix"></image>
+				</view>
+				
 			</view>
 		</view>
 		<search></search>
@@ -19,7 +24,9 @@
 				</view>
 				<view class="list-right">
 					<view class="time">{{item.lastTime}}</view>
-					<button type="default" size="mini">-></button>
+					<button type="default" size="mini">
+						<image src="../../static/images/arrow-right-line-white.png" mode="widthFix"></image>
+					</button>
 				</view>
 			</view>	
 			
@@ -35,19 +42,19 @@
 				chatList:[
 					{
 						avatar:"../../static/logo.png",
-						name:"小明",
+						name:"李佳龙",
 						lastTime:"2:00PM",
-						lastMsg:"hello"
+						lastMsg:"I am pig"
 					},{
 						avatar:"../../static/logo.png",
-						name:"小明",
+						name:"李佳龙",
 						lastTime:"2:00PM",
-						lastMsg:"hello"
+						lastMsg:"I am pig"
 					},{
 						avatar:"../../static/logo.png",
-						name:"小明",
+						name:"李佳龙",
 						lastTime:"2:00PM",
-						lastMsg:"hello"
+						lastMsg:"I am pig"
 					},
 				]
 			}
@@ -68,10 +75,20 @@
 		justify-content: space-between;
 		margin-bottom: 30rpx;
 		.operate {
-			width: 100rpx;
+			width: 180rpx;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			.icon-wrapper{
+				width: 80rpx;
+				height: 80rpx;
+				border-radius: 50%;
+				background-color: #eee;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-left: 10rpx;
+			}
 			image {
 				width: 48rpx;
 			}
@@ -116,10 +133,16 @@
 				margin-bottom: 10rpx;
 			}
 			button{
-				height: 50rpx;
-				border-radius: 50rpx;
-				line-height: 50rpx;
-				background-color: #4CD964;
+				box-sizing: border-box;
+				height: 60rpx;
+				width: 60rpx;
+				border-radius: 60rpx;
+				background-color: #333;
+				padding: 1rpx;
+				image{
+					margin-top: 5rpx;
+					width: 50rpx;
+				}
 			}
 		}
 	}
