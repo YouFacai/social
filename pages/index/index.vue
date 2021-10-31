@@ -4,11 +4,16 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<tabBar/>
 	</view>
 </template>
 
 <script>
+	import tabBar from '../../components/tabBar/index.vue';
 	export default {
+		components:{
+			tabBar
+		},
 		data() {
 			return {
 				title: 'Hello'

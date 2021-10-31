@@ -1,0 +1,1 @@
+<view class="search-box"><input class="input" type="text" placeholder="find something fun... "/><view class="btn-search"><image src="../../static/images/search-2-line-white.png" mode="widthFix"></image></view></view>

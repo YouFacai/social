@@ -6,7 +6,7 @@
 			</view>
 			<view class="middle">
 				<view>关注</view>
-				<view class="active" @click="">推荐</view>
+				<view class="active" >推荐</view>
 				<view>发现</view>
 			</view>
 			<view class="right">
@@ -16,12 +16,17 @@
 		<view>
 			<recommend></recommend>
 		</view>
+		<tabBar/>
 	</view>
 </template>
 
 <script>
 	import recommend from '../../components/recommend/recommend.vue'
+	import tabBar from '../../components/tabBar/index.vue';
 	export default {
+		components:{
+			tabBar,
+		},
 		data() {
 			return {
 				

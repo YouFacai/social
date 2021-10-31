@@ -31,12 +31,17 @@
 			</view>	
 			
 		</scroll-view>
+		<tabBar/>
 	</view>
 </template>
 
 <script>
 	import search from '../../components/search/search.vue'
+	import tabBar from '../../components/tabBar/index.vue';
 	export default {
+		components:{
+			tabBar
+		},
 		data() {
 			return {
 				chatList:[
@@ -93,9 +98,7 @@
 				width: 48rpx;
 			}
 		}
-
 	}
-
 	.title {
 		font-size: $uni-font-size-title;
 	}
@@ -147,3 +150,4 @@
 		}
 	}
 </style>
+

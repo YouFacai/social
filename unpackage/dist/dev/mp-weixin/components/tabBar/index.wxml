@@ -1,0 +1,1 @@
+<view><view class="u-page"></view><u-tabbar vue-id="1944368a-1" list="{{tableList}}" mid-button="{{true}}" value="{{current}}" data-event-opts="{{[['^change',[['changePath']]],['^input',[['__set_model',['','current','$event',[]]]]]]}}" bind:change="__e" bind:input="__e" bind:__l="__l"></u-tabbar></view>

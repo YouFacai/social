@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/square/square",
+    "pages/chat/chat",
+    "pages/index/index",
+    "pages/chat/chatDetail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "titleNView": false
+  },
+  "usingComponents": {}
+}
