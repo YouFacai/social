@@ -2,7 +2,6 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "search": "/components/search/search",
     "tab-bar": "/components/tabBar/index"
   }
 }

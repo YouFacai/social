@@ -4,6 +4,10 @@ const base = typeof window !='undefined' ? '/api' : 'http://localhost:3000'
 export const getMymenus = function (){
     return new Promise((resolve,reject) => {
         uni.request({
+            method:'post',
+            data:{
+                token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNjM1NzUxMTQ2fQ.Czgp7e86e9_E2GA5p75JXMQzSZ4XETvV6SDu2KYZFWs'
+            },
             url: `${base}/myRouter/getMymenus`, //仅为示例，并非真实接口地址。
             success: (res) => {
                 resolve(res.data.data)

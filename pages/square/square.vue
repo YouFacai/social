@@ -14,7 +14,7 @@
 			</view>
 		</view>
 		<view>
-			<recommend></recommend>
+			<!-- <recommend></recommend> -->
 		</view>
 		<tabBar/>
 	</view>

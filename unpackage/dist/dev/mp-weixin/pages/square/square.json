@@ -2,7 +2,6 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "recommend": "/components/recommend/recommend",
     "tab-bar": "/components/tabBar/index"
   }
 }

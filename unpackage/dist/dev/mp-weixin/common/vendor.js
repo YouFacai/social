@@ -12483,6 +12483,10 @@ var base = typeof window != 'undefined' ? '/api' : 'http://localhost:3000';
 var getMymenus = function getMymenus() {
   return new Promise(function (resolve, reject) {
     uni.request({
+      method: 'post',
+      data: {
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vYmFyIiwiaWF0IjoxNjM1NzUxMTQ2fQ.Czgp7e86e9_E2GA5p75JXMQzSZ4XETvV6SDu2KYZFWs' },
+
       url: "".concat(base, "/myRouter/getMymenus"), //仅为示例，并非真实接口地址。
       success: function success(res) {
         resolve(res.data.data);

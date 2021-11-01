@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -167,32 +167,38 @@ var _default =
     changePath: function changePath(e) {
       switch (e) {
         case 0:
-          uni.redirectTo({
-            url: "/pages/index/index" });
-
           this.$store.commit("tableBarData/setFoce", 0);
+          /* uni.redirectTo({
+                                                           url: "/pages/index/index",
+                                                         }); */
+          this.$router.replace("/pages/index/index");
+
           break;
         case 1:
-          uni.redirectTo({
-            url: "/pages/square/square" });
-
           this.$store.commit("tableBarData/setFoce", 1);
+          /*  uni.redirectTo({
+                                                           url: "/pages/square/square",
+                                                         }); */
+          this.$router.replace("/pages/square/square");
+
           break;
         case 3:
-          uni.redirectTo({
-            url: "/pages/chat/chat" });
-
           this.$store.commit("tableBarData/setFoce", 3);
+          /* uni.redirectTo({
+                                                           url: "/pages/chat/chat",
+                                                         }); */
+          this.$router.replace("/pages/chat/chat");
+
           break;
         case 4:
-          uni.redirectTo({
-            url: "/pages/my/my" });
-
           this.$store.commit("tableBarData/setFoce", 4);
+          /* uni.redirectTo({
+                                                           url: "/pages/my/my",
+                                                         }); */
+          this.$router.replace("/pages/my/my");
           break;}
 
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

@@ -12,9 +12,9 @@
 				
 			</view>
 		</view>
-		<search></search>
+		<!-- <search></search> -->
 		<scroll-view scroll-y="true" class="chat-list">
-			<view v-for="item in chatList" class="list-item">
+			<view v-for="item in chatList" class="list-item" :key="item">
 				<view class="list-left">
 					<image :src="item.avatar" mode="widthFix"></image>
 					<view>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-	import search from '../../components/search/search.vue'
+	// import search from '../../components/search/search.vue'
 	import tabBar from '../../components/tabBar/index.vue';
 	export default {
 		components:{
