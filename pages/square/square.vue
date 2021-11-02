@@ -12,13 +12,8 @@
 				<image src="http://www.yzlhaha.top/static/socialicon/icon_Music.png" mode="widthFix"></image>
 			</view>
 		</view>
-<<<<<<< HEAD
-		<view>
-			<!-- <recommend></recommend> -->
-=======
 		<view v-if="this.current === 1">
 			<recommend></recommend>
->>>>>>> newdev
 		</view>
 		<view v-else-if="this.current === 0">
 			<follow></follow>

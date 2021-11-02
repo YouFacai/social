@@ -55,7 +55,7 @@
 			@input="handleInput"
 			@confirm="onConfirm"
 		/>
-		<view class="u-input__right-icon u-flex">
+		<!-- <view class="u-input__right-icon u-flex">
 			<view class="u-input__right-icon__clear u-input__right-icon__item" @tap="onClear" v-if="clearable && value != '' && focused">
 				<u-icon size="32" name="close-circle-fill" color="#c0c4cc"/>
 			</view>
@@ -67,7 +67,7 @@
 			}">
 				<u-icon name="arrow-down-fill" size="26" color="#c0c4cc"></u-icon>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
