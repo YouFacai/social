@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.header {
+.header.data-v-bf16e7f4 {
   height: 100rpx;
   display: flex;
   flex-direction: row;
@@ -33,13 +33,13 @@
   justify-content: space-between;
   margin-bottom: 30rpx;
 }
-.header .operate {
+.header .operate.data-v-bf16e7f4 {
   width: 180rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.header .operate .icon-wrapper {
+.header .operate .icon-wrapper.data-v-bf16e7f4 {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
@@ -49,48 +49,67 @@
   align-items: center;
   margin-left: 10rpx;
 }
-.header .operate image {
+.header .operate image.data-v-bf16e7f4 {
   width: 48rpx;
 }
-.title {
+.title.data-v-bf16e7f4 {
   font-size: 40rpx;
 }
-.chat-list {
+.chat-list.data-v-bf16e7f4 {
   box-sizing: border-box;
-  padding: 0 60rpx;
+  height: 1000rpx;
 }
-.list-item {
+.list-item.data-v-bf16e7f4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 150rpx;
   border-bottom: 2rpx solid #ccc;
+  padding: 0 60rpx;
 }
-.list-item .list-left {
+.list-item .list-left.data-v-bf16e7f4 {
   display: flex;
 }
-.list-item .list-left image {
-  width: 64rpx;
+.list-item .list-left .avatar.data-v-bf16e7f4 {
+  position: relative;
+}
+.list-item .list-left image.data-v-bf16e7f4 {
+  width: 80rpx;
   border-radius: 50%;
   margin-right: 20rpx;
 }
-.list-item .list-left .uname {
+.list-item .list-left .avatar.data-v-bf16e7f4:after {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #fe5f63;
+  position: absolute;
+  border-radius: 50%;
+  top: 10rpx;
+  right: 15rpx;
+}
+.list-item .list-left .uname.data-v-bf16e7f4 {
   font-size: 36rpx;
   font-weight: bold;
   margin-bottom: 10rpx;
 }
-.list-item .list-left .msg {
+.list-item .list-left .msg.data-v-bf16e7f4 {
   color: #ccc;
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.list-item .list-right {
+.list-item .list-right.data-v-bf16e7f4 {
   text-align: right;
+  margin-right: 10rpx;
 }
-.list-item .list-right .time {
+.list-item .list-right .time.data-v-bf16e7f4 {
   color: #aaa;
   margin-bottom: 10rpx;
 }
-.list-item .list-right button {
+.list-item .list-right button.data-v-bf16e7f4 {
   box-sizing: border-box;
   height: 60rpx;
   width: 60rpx;
@@ -98,7 +117,7 @@
   background-color: #333;
   padding: 1rpx;
 }
-.list-item .list-right button image {
+.list-item .list-right button image.data-v-bf16e7f4 {
   margin-top: 5rpx;
   width: 50rpx;
 }

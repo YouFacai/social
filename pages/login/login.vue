@@ -2,18 +2,30 @@
 	<view class="bg">
 		<view class="logo">
 			<image src="../../static/logo.png" mode="widthFix"></image>
-			<view>所谓伊人，在水一方</view>
+			<view>waiting for you</view>
 		</view>
 		<u-form :model="form" ref="uForm" class="form" :border-bottom="false">
 			<u-form-item prop="email" class="label" :border-bottom="false">
 				<u-input v-model="form.email" placeholder="请输入邮箱" :custom-style="customInput" />
 			</u-form-item>
 
-			<u-form-item prop="checking" class="label" :border-bottom="false">
+			<u-form-item prop="checking" class="label" :border-bottom="false" v-if="isEmailLogin">
 				<u-input v-model="form.checking" placeholder="请输入验证码" maxlength=4 :custom-style="customInput" />
-				<slot>
-					<view class="get-checking">获取验证码</view>
-				</slot>
+				<template v-slot:right>
+
+					<view v-if="timerNum === 60" class="get-checking" @click="getChecking">获取验证码</view>
+					<view v-else class="get-checking">{{timerNum}}秒后可重新获取</view>
+
+
+					<!-- #ifdef MP-WEIXIN -->
+					<view  class="get-checking" @tap="getChecking">获取验证码</view>
+					<!-- #endif -->
+
+				</template>
+			</u-form-item>
+
+			<u-form-item prop="checking" class="label" :border-bottom="false" v-else>
+				<u-input v-model="form.checking" placeholder="请输入密码" maxlength=16 :custom-style="customInput" />
 			</u-form-item>
 		</u-form>
 		<view style="padding: 0 100rpx; width: 100%;">
@@ -21,8 +33,9 @@
 				立即登录</u-button>
 		</view>
 		<view class="login-help">
-			<view>密码登录</view>
-			<view>收不到验证码？</view>
+			<view @click="transPassword" v-if="isEmailLogin">密码登录</view>
+			<view @click="transEmail" v-else>邮箱验证登录</view>
+			<view @click="gotoRegister">立即注册</view>
 		</view>
 		<view class="user-agreement">
 			<radio value="r1" :checked="checked" />
@@ -35,19 +48,22 @@
 	export default {
 		data() {
 			return {
+				isEmailLogin: true,
+				timerNum: 60,
+				timer: null,
 				customStyle: {
 					height: "100rpx",
 					color: "rgba(255, 255, 255, .6)",
 					border: "none",
 					backgroundColor: "rgba(255, 255, 255, .1)"
 				},
-				customInput:{
-					height:"100rpx",
-					borderRadius:"100rpx",
-					color:"#000",
-					paddingLeft:"30rpx",
-					backgroundColor:"rgba(255,255,255,.1)",
-					fontSize:"36rpx"
+				customInput: {
+					height: "100rpx",
+					borderRadius: "100rpx",
+					color: "#000",
+					paddingLeft: "30rpx",
+					backgroundColor: "rgba(255,255,255,.1)",
+					fontSize: "36rpx"
 				},
 				checked: false,
 				form: {
@@ -61,26 +77,56 @@
 						pattern: /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/,
 						message: '邮箱格式不正确',
 						// 可以单个或者同时写两个触发验证方式 
-						trigger: ['change', 'blur'],
+						trigger:  'blur',
 					}],
 					checking: [{
 						len: 4,
 						message: '请输入4位验证码',
-						trigger: 'change'
+						trigger: 'blur'
 					}]
 				}
 			};
 		},
 		methods: {
-			submit(){
+			submit() {
 				console.log(1);
+			},
+			transPassword() {
+				this.isEmailLogin = false;
+			},
+			transEmail() {
+				this.isEmailLogin = true;
+			},
+			gotoRegister() {
+				uni.navigateTo({
+					url: './register'
+				})
+			},
+			getChecking() {
+				console.log(1);
+				this.timerNum -= 1;
+				this.timer = setInterval(() => {
+					if (this.timerNum === 0) { // 定时器时间为0后清除定时器
+						this.timer && this.clearTimer();
+						this.timerNum = 60;
+					} else {
+						this.timerNum -= 1;
+					}
+				}, 1000);
+			},
+			clearTimer() { //清除定时器
+				clearInterval(this.timer);
+				this.timer = null;
 			}
+		},
+		onReady() {
+			this.$refs.uForm.setRules(this.rules);
 		}
 	}
 </script>
 <style lang="scss">
 	.bg {
-		background: linear-gradient(45deg,  #3879cd, #ccc, #3879cd, #6cc8b9, #ccc,#6cc8b9);
+		background: linear-gradient(45deg, #3879cd, #ccc, #3879cd, #6cc8b9, #ccc, #6cc8b9);
 		height: 100vh;
 		display: flex;
 		align-items: center;
@@ -93,24 +139,31 @@
 			margin-bottom: 40rpx;
 
 			image {
-				width: 300rpx;
+				width: 400rpx;
 				margin: 30rpx;
 			}
 		}
 
 		.form {
+			box-sizing: border-box;
 			width: 100%;
 			padding: 30rpx 100rpx;
-			.label{
+			position: relative;
+
+			.label {
 				margin: 30rpx 0;
-				position: relative;
+
+				.get-checking {
+					position: absolute;
+					right: 130rpx;
+					float: right;
+					white-space: nowrap;
+					font-size: 36rpx;
+					color: #24d9d6;
+				}
 			}
-			.get-checking {
-				position: absolute;
-				right: 20rpx;
-				font-size: 36rpx;
-				color: #24d9d6;
-			}
+
+
 		}
 
 		.login-help {

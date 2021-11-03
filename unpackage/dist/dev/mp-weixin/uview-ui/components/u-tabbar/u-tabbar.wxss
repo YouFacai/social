@@ -29,6 +29,7 @@
 }
 .u-tabbar__content.data-v-180fb800 {
 
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
 
@@ -62,6 +63,7 @@
   height: 100%;
   padding: 12rpx 0;
 
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
 
@@ -91,6 +93,7 @@
 .u-tabbar__content__circle.data-v-180fb800 {
   position: relative;
 
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
 
@@ -104,6 +107,7 @@
   height: 90rpx;
   border-radius: 100%;
 
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
 

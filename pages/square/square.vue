@@ -25,6 +25,10 @@
 	import recommend from '../../components/recommend/recommend.vue'
 	import follow from '../../components/follow/follow.vue'
 	export default {
+		components:{
+			recommend,
+			follow
+		},
 		data() {
 			return {
 				list: [{

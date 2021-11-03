@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "recommend-u-waterfall-left": "/components/recommend/recommend-u-waterfall-left",
+    "recommend-u-waterfall-right": "/components/recommend/recommend-u-waterfall-right",
+    "u-waterfall": "/uview-ui/components/u-waterfall/u-waterfall",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore"
+  }
+}

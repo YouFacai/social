@@ -2,6 +2,7 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "tab-bar": "/components/tabBar/index"
+    "search": "/components/search/search",
+    "u-swipe-action": "/uview-ui/components/u-swipe-action/u-swipe-action"
   }
 }

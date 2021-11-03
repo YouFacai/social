@@ -28,15 +28,14 @@
 					<view class="u-form-item--right__content__slot ">
 						<slot />
 					</view>
-					<view class="u-form-item--right__content__icon u-flex" v-if="$slots.right || rightIcon">
-						<u-icon :custom-style="rightIconStyle" v-if="rightIcon" :name="rightIcon"></u-icon>
-						<slot name="right" />
+					<view class="u-form-item--right__content__icon u-flex" v-if="$slots.right">
+						<slot name="right"/>
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="u-form-item__message" v-if="validateState === 'error' && showError('message')" :style="{
-			paddingLeft: elLabelPosition == 'left' ? $u.addUnit(elLabelWidth) : '0',
+			paddingLeft: '30rpx'
 		}">{{validateMessage}}</view>
 	</view>
 </template>
@@ -374,12 +373,11 @@
 				position: relative;
 				@include vue-flex;
 				align-items: center;
-				padding-right: 10rpx;
 				flex: 1;
 
-				&__icon {
-					margin-right: 8rpx;
-				}
+				// &__icon {
+				// 	margin-right: 8rpx;
+				// }
 
 				&--required {
 					position: absolute;
@@ -411,12 +409,6 @@
 					@include vue-flex;
 					align-items: center;
 					/* #endif */
-				}
-
-				&__icon {
-					margin-left: 10rpx;
-					color: $u-light-color;
-					font-size: 30rpx;
 				}
 			}
 		}
