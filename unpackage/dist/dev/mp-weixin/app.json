@@ -1,21 +1,20 @@
 {
-    "pages": [
-        "pages/login/login",
-        "pages/index/index",
-        "pages/my/my",
-        "pages/square/square",
-        "pages/chat/chat",
-        "pages/chat/chatDetail",
-        "pages/login/register"
-    ],
-    "subPackages": [],
-    "window": {
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "uni-app",
-        "navigationBarBackgroundColor": "#F8F8F8",
-        "backgroundColor": "#F8F8F8",
-        "titleNView": false
-    },
-    "usingComponents": {},
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/my/my",
+    "pages/square/square",
+    "pages/chat/chat",
+    "pages/chat/chatDetail",
+    "pages/login/register"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "titleNView": false
+  },
+  "usingComponents": {}
 }

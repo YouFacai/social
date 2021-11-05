@@ -27,6 +27,7 @@
 .header-view.data-v-13898bbe {
   height: 150rpx;
   padding: 10rpx 40rpx;
+  margin-top: 100rpx;
   white-space: nowrap;
   background-color: #fff;
 }

@@ -12,22 +12,25 @@
 				<image src="http://www.yzlhaha.top/static/socialicon/icon_Music.png" mode="widthFix"></image>
 			</view>
 		</view>
-		<view v-if="this.current === 1">
+		<view v-if="this.current === 1" style="height: 100%">
 			<recommend></recommend>
 		</view>
 		<view v-else-if="this.current === 0">
 			<follow></follow>
 		</view>
+		<tabBar/>
 	</view>
 </template>
 
 <script>
 	import recommend from '../../components/recommend/recommend.vue'
 	import follow from '../../components/follow/follow.vue'
+	import tabBar from '../../components/tabBar/index.vue'
 	export default {
 		components:{
 			recommend,
-			follow
+			follow,
+			tabBar
 		},
 		data() {
 			return {
@@ -50,12 +53,17 @@
 <style lang="scss">
 	.header {
 		height: 100rpx;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 10rpx 40rpx;
 		border-bottom: 2rpx solid #ccc;
-
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		z-index: 99;
 		image {
 			width: 64rpx;
 		}

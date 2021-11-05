@@ -58,6 +58,16 @@
   font-size: 36rpx;
   color: #24d9d6;
 }
+.bg .form .label .get-checking-app {
+  position: absolute;
+  right: 130rpx;
+  top: 200rpx;
+  z-index: 99;
+  float: right;
+  white-space: nowrap;
+  font-size: 36rpx;
+  color: #24d9d6;
+}
 .bg .login-help {
   display: flex;
   width: 100%;

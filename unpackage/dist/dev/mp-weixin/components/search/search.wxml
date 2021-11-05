@@ -1,1 +1,1 @@
-<view class="search-box"><input class="input" type="text" placeholder="find something fun... "/><view class="btn-search"><image src="../../static/images/search-2-line-white.png" mode="widthFix"></image></view></view>
+<view class="search-box data-v-eb1fb978"><input class="input data-v-eb1fb978" type="text" placeholder="find something fun... "/><view class="btn-search data-v-eb1fb978"><image src="../../static/images/search-2-line-white.png" mode="widthFix" class="data-v-eb1fb978"></image></view></view>

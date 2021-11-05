@@ -18,7 +18,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.search-box {
 		box-sizing: border-box;
 		width: 100%;

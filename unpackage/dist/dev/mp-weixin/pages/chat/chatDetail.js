@@ -152,11 +152,28 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
       msg: '',
+      scrollToEnd: '',
       chatList: [{
         id: 1,
         username: "user1",
@@ -222,20 +239,26 @@ var _default =
           msg: this.msg,
           time: "2:00PM" });
 
-        this.socket.emit("message", this.msg);
-        console.log(this.socket);
+        this.getMsg();
+        // this.socket.emit("message", this.msg);
+        // console.log(this.socket);
       }
 
     },
-    getMsg: function getMsg() {var _this = this;
-      this.socket.on("gbmsg", function (data) {
-        _this.chatList.push({
-          id: 7,
-          username: "user1",
-          avatar: "../../static/logo.png",
-          msg: data,
-          time: "2:00PM" });
-
+    getMsg: function getMsg() {
+      console.log(1);
+      // this.socket.on("gbmsg", data => {
+      // 	this.chatList.push({
+      // 		id: 7,
+      // 		username: "user1",
+      // 		avatar: "../../static/logo.png",
+      // 		msg: data,
+      // 		time: "2:00PM"
+      // 	});
+      // })
+      this.$nextTick(function () {
+        console.log(2);
+        this.scrollToEnd = 'msg8';
       });
     } } };exports.default = _default;
 

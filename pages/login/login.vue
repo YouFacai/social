@@ -12,13 +12,14 @@
 			<u-form-item prop="checking" class="label" :border-bottom="false" v-if="isEmailLogin">
 				<u-input v-model="form.checking" placeholder="请输入验证码" maxlength=4 :custom-style="customInput" />
 				<template v-slot:right>
-
+					<!-- #ifdef H5 -->
 					<view v-if="timerNum === 60" class="get-checking" @click="getChecking">获取验证码</view>
 					<view v-else class="get-checking">{{timerNum}}秒后可重新获取</view>
+					<!-- #endif -->
 
-
-					<!-- #ifdef MP-WEIXIN -->
-					<view  class="get-checking" @tap="getChecking">获取验证码</view>
+					<!-- #ifdef MP || APP-PLUS -->
+					<view v-if="timerNum === 60" class="get-checking-app" @click="getChecking">获取验证码</view>
+					<view v-else class="get-checking-app">{{timerNum}}秒后可重新获取</view>
 					<!-- #endif -->
 
 				</template>
@@ -93,6 +94,7 @@
 			},
 			transPassword() {
 				this.isEmailLogin = false;
+				this.form.checking = ''
 			},
 			transEmail() {
 				this.isEmailLogin = true;
@@ -156,6 +158,16 @@
 				.get-checking {
 					position: absolute;
 					right: 130rpx;
+					float: right;
+					white-space: nowrap;
+					font-size: 36rpx;
+					color: #24d9d6;
+				}
+				.get-checking-app{
+					position: absolute;
+					right: 130rpx;
+					top: 200rpx;
+					z-index: 99;
 					float: right;
 					white-space: nowrap;
 					font-size: 36rpx;

@@ -4,6 +4,7 @@
   "usingComponents": {
     "u-tabs": "/uview-ui/components/u-tabs/u-tabs",
     "recommend": "/components/recommend/recommend",
-    "follow": "/components/follow/follow"
+    "follow": "/components/follow/follow",
+    "tab-bar": "/components/tabBar/index"
   }
 }

@@ -159,7 +159,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | components/recommend/recommend */ "components/recommend/recommend").then((function () {return resolve(__webpack_require__(/*! ../../components/recommend/recommend.vue */ 147));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var follow = function follow() {__webpack_require__.e(/*! require.ensure | components/follow/follow */ "components/follow/follow").then((function () {return resolve(__webpack_require__(/*! ../../components/follow/follow.vue */ 154));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | components/recommend/recommend */ "components/recommend/recommend").then((function () {return resolve(__webpack_require__(/*! ../../components/recommend/recommend.vue */ 147));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var follow = function follow() {__webpack_require__.e(/*! require.ensure | components/follow/follow */ "components/follow/follow").then((function () {return resolve(__webpack_require__(/*! ../../components/follow/follow.vue */ 154));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var tabBar = function tabBar() {__webpack_require__.e(/*! require.ensure | components/tabBar/index */ "components/tabBar/index").then((function () {return resolve(__webpack_require__(/*! ../../components/tabBar/index.vue */ 103));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
 
 
 
@@ -188,7 +190,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   components: {
     recommend: recommend,
-    follow: follow },
+    follow: follow,
+    tabBar: tabBar },
 
   data: function data() {
     return {

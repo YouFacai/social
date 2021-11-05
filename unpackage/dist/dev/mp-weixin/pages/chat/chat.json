@@ -3,6 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "search": "/components/search/search",
-    "u-swipe-action": "/uview-ui/components/u-swipe-action/u-swipe-action"
+    "u-swipe-action": "/uview-ui/components/u-swipe-action/u-swipe-action",
+    "tab-bar": "/components/tabBar/index"
   }
 }

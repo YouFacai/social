@@ -26,11 +26,17 @@
 /* 文章场景相关 */
 .header {
   height: 100rpx;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10rpx 40rpx;
   border-bottom: 2rpx solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 99;
 }
 .header image {
   width: 64rpx;

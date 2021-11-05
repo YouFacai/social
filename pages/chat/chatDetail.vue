@@ -1,6 +1,8 @@
 <template>
 	<view>
-		<scroll-view scroll-y="true" style="overflow: auto; height: 1120rpx;" scroll-into-view="msg8">
+		<!-- #ifdef H5 -->
+		<scroll-view scroll-y="true" style="padding-bottom: 130rpx; overflow: auto; height: 1204rpx;"
+			:scroll-into-view="scrollToEnd">
 			<view v-for="item in chatList" class="chat-item" :key="item.id" :id="'msg'+item.id">
 				<view class="time">{{item.time}}</view>
 				<view class="msg" :class="[item.username ==='user1'?'right':'left']">
@@ -9,9 +11,23 @@
 				</view>
 			</view>
 		</scroll-view>
+		<!-- #endif -->
+		<!-- #ifdef MP || APP-PLUS -->
+		<scroll-view scroll-y="true" style="padding-bottom: 130rpx; overflow: auto; height: 1074rpx;"
+			:scroll-into-view="scrollToEnd">
+			<view v-for="item in chatList" class="chat-item" :key="item.id" :id="'msg'+item.id">
+				<view class="time">{{item.time}}</view>
+				<view class="msg" :class="[item.username ==='user1'?'right':'left']">
+					<image src="../../static/logo.png" mode="widthFix" />
+					<view class="chat-content">{{item.msg}}</view>
+				</view>
+			</view>
+		</scroll-view>
+		<!-- #endif -->
 		<view class="input-box">
 			<image src="http://www.yzlhaha.top/static/socialicon/add-circle-line.png" mode="widthFix"></image>
-			<textarea type="text" confirm-type="send" class="input" placeholder="输入新消息" v-model="msg" auto-height="true" show-confirm-bar="false" maxlength="-1" />
+			<textarea type="text" confirm-type="send" class="input" placeholder="输入新消息" v-model="msg" auto-height="true"
+				show-confirm-bar="false" maxlength="-1" />
 			<image @click="handleSubmit" class="send"
 				src="http://www.yzlhaha.top/static/socialicon/send-plane-fill-copy.png" mode="widthFix"></image>
 		</view>
@@ -23,6 +39,7 @@
 		data() {
 			return {
 				msg: '',
+				scrollToEnd: '',
 				chatList: [{
 					id: 1,
 					username: "user1",
@@ -88,20 +105,26 @@
 						msg: this.msg,
 						time: "2:00PM"
 					})
-					this.socket.emit("message", this.msg);
-					console.log(this.socket);
+					this.getMsg();
+					// this.socket.emit("message", this.msg);
+					// console.log(this.socket);
 				}
 
 			},
 			getMsg() {
-				this.socket.on("gbmsg", data => {
-					this.chatList.push({
-						id: 7,
-						username: "user1",
-						avatar: "../../static/logo.png",
-						msg: data,
-						time: "2:00PM"
-					});
+				console.log(1);
+				// this.socket.on("gbmsg", data => {
+				// 	this.chatList.push({
+				// 		id: 7,
+				// 		username: "user1",
+				// 		avatar: "../../static/logo.png",
+				// 		msg: data,
+				// 		time: "2:00PM"
+				// 	});
+				// })
+				this.$nextTick(function() {
+					console.log(2);
+					this.scrollToEnd = 'msg8'
 				})
 			}
 		}
@@ -159,11 +182,11 @@
 		height: 130rpx;
 		display: flex;
 		align-items: center;
-		// position: fixed;
+		position: fixed;
 		padding: 15rpx 40rpx;
 		background-color: #fff;
-		// bottom: 0;
-		// left: 0;
+		bottom: 0;
+		left: 0;
 
 		image {
 			width: 80rpx;

@@ -10,10 +10,11 @@
 					<image src="http://www.yzlhaha.top/static/socialicon/account-pin-box-line.png" mode="widthFix">
 					</image>
 				</view>
-
 			</view>
 		</view>
-		<search></search>
+		<view class="search-wrap">
+			<search></search>
+		</view>
 		<scroll-view scroll-y="true" class="chat-list" show-scrollbar="false">
 			<u-swipe-action :show="item.show" :index="index" v-for="(item, index) in chatList" :key="item.id"
 				@open="open" :options="options" btn-width="120" @click="click">
@@ -36,14 +37,17 @@
 				</view>
 			</u-swipe-action>
 		</scroll-view>
+		<tabBar/>
 	</view>
 </template>
 
 <script>
 	import search from '../../components/search/search.vue'
+	import tabBar from '../../components/tabBar/index.vue'
 	export default {
 		components:{
-			search
+			search,
+			tabBar
 		},
 		data() {
 			return {
@@ -53,7 +57,7 @@
 						name: "李佳龙",
 						lastTime: "2:00PM",
 						lastMsg: "I am pig",
-						show: false,
+						show: false,//删除按钮是否显示
 						tip: false //是否有未读消息
 					},
 					{
@@ -162,13 +166,17 @@
 <style lang="scss" scoped>
 	.header {
 		height: 100rpx;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		padding: 0 40rpx;
 		line-height: 100rpx;
 		justify-content: space-between;
-		margin-bottom: 30rpx;
-
+		position:fixed;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		z-index: 99;
 		.operate {
 			width: 180rpx;
 			display: flex;
@@ -192,14 +200,24 @@
 		}
 
 	}
-
+	.search-wrap{
+		width: 100%;
+		height: 100rpx;
+		padding-top: 30rpx;
+		background-color: #fff;
+		z-index: 99;
+		position: fixed;
+		top: 100rpx;
+		left: 0;
+	}
 	.title {
 		font-size: $uni-font-size-title;
 	}
 
 	.chat-list {
+		margin-top: 230rpx;
 		box-sizing: border-box;
-		height: 1000rpx;
+		height: 1014rpx;
 		// padding: 0 60rpx;
 		// overflow: hidden;
 	}

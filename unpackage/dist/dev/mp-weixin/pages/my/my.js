@@ -203,7 +203,7 @@ var _index = __webpack_require__(/*! @/api/index.js */ 66); //
 //
 //
 //
-var tabBar = function tabBar() {__webpack_require__.e(/*! require.ensure | components/tabBar/index */ "components/tabBar/index").then((function () {return resolve(__webpack_require__(/*! ../../components/tabBar/index.vue */ 135));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { tabBar: tabBar }, data: function data() {return { // 后端请求回来的
+var tabBar = function tabBar() {__webpack_require__.e(/*! require.ensure | components/tabBar/index */ "components/tabBar/index").then((function () {return resolve(__webpack_require__(/*! ../../components/tabBar/index.vue */ 103));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { tabBar: tabBar }, data: function data() {return { // 后端请求回来的
       menus: [] };}, created: function created() {var _this = this;(0, _index.getMymenus)().then(function (res) {_this.menus = res;});} };exports.default = _default;
 
 /***/ }),

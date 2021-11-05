@@ -68,8 +68,11 @@ page {
   height: 130rpx;
   display: flex;
   align-items: center;
+  position: fixed;
   padding: 15rpx 40rpx;
   background-color: #fff;
+  bottom: 0;
+  left: 0;
 }
 .input-box image {
   width: 80rpx;

@@ -31,34 +31,34 @@ export default {
       switch (e) {
         case 0:
           this.$store.commit("tableBarData/setFoce", 0);
-          /* uni.redirectTo({
+          uni.redirectTo({
             url: "/pages/index/index",
-          }); */
-          this.$router.replace("/pages/index/index");
+          });
+          // this.$router.replace("/pages/index/index");
 
           break;
         case 1:
           this.$store.commit("tableBarData/setFoce", 1);
-          /*  uni.redirectTo({
+           uni.redirectTo({
             url: "/pages/square/square",
-          }); */
-          this.$router.replace("/pages/square/square");
+          });
+          // this.$router.replace("/pages/square/square");
 
           break;
         case 3:
           this.$store.commit("tableBarData/setFoce", 3);
-          /* uni.redirectTo({
+          uni.redirectTo({
             url: "/pages/chat/chat",
-          }); */
-          this.$router.replace("/pages/chat/chat");
+          });
+          // this.$router.replace("/pages/chat/chat");
 
           break;
         case 4:
           this.$store.commit("tableBarData/setFoce", 4);
-          /* uni.redirectTo({
+          uni.redirectTo({
             url: "/pages/my/my",
-          }); */
-          this.$router.replace("/pages/my/my");
+          });
+          // this.$router.replace("/pages/my/my");
           break;
       }
     },
